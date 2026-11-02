@@ -23,12 +23,40 @@
       padding: 20px 12px;
       overscroll-behavior: none;
     }
-    .container {
+    .layout {
       width: 100%;
-      max-width: 620px;
+      max-width: 900px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 28px;
+    }
+    .container {
+      flex: 0 1 320px;
+      width: 100%;
+      max-width: 320px;
       display: flex;
       flex-direction: column;
       gap: 16px;
+    }
+    .qr {
+      flex: 0 0 auto;
+      width: 200px;
+      height: 200px;
+      padding: 10px;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .qr img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
     }
     .btn {
       padding: 18px 24px;
@@ -80,33 +108,53 @@
     .btn-phone { background: linear-gradient(45deg, #06b6d4, #22d3ee); }
     .btn-card  { background: #01a35d; }
 
+    /* موبایل و صفحه‌های باریک: فقط یک کیوآر، بعد از شماره کارت */
+    @media (max-width: 800px) {
+      .layout {
+        flex-direction: column;
+        gap: 16px;
+      }
+      .container { max-width: 620px; flex: 0 0 auto; }
+      .qr { width: 180px; height: 180px; }
+      .qr:first-child { display: none; }
+    }
     @media (max-width: 620px) {
       .btn { max-width: 100%; }
     }
   </style>
 </head>
 <body>
-<div class="container">
-  <div class="btn btn-ir1" data-text="IR@n09150915">
-    <div>IR@n09150915</div>
+<div class="layout">
+  <div class="qr">
+    <img src="https://ipasscopy.github.io/images/qrcode_filetransfer.png" alt="QR Code" />
   </div>
-  <div class="btn btn-ir2" data-text="IR@n09150915">
-    <div>IR@n09150915</div>
+
+  <div class="container">
+    <div class="btn btn-ir1" data-text="IR@n09150915">
+      <div>IR@n09150915</div>
+    </div>
+    <div class="btn btn-ir2" data-text="IR@n09150915">
+      <div>IR@n09150915</div>
+    </div>
+    <div class="btn btn-email" data-text="payamgir55@gmail.com">
+      <div>ایمیل</div>
+    </div>
+    <div class="btn btn-postal" data-text="9617687719">
+      <div>کد پستی</div>
+    </div>
+    <div class="btn btn-addr" data-text="سبزوار خیابان طالقانی نبش طالقانی نوزده ممیز یک پلاک دویست و شصت و هشت">
+      <div>آدرس</div>
+    </div>
+    <div class="btn btn-phone" data-text="05144643441">
+      <div>تلفن ثابت</div>
+    </div>
+    <div class="btn btn-card" data-text="5041721228069770">
+      <div>شماره کارت</div>
+    </div>
   </div>
-  <div class="btn btn-email" data-text="payamgir55@gmail.com">
-    <div>ایمیل</div>
-  </div>
-  <div class="btn btn-postal" data-text="9617687719">
-    <div>کد پستی</div>
-  </div>
-  <div class="btn btn-addr" data-text="سبزوار خیابان طالقانی نبش طالقانی نوزده ممیز یک پلاک دویست و شصت و هشت">
-    <div>آدرس</div>
-  </div>
-  <div class="btn btn-phone" data-text="05144643441">
-    <div>تلفن ثابت</div>
-  </div>
-  <div class="btn btn-card" data-text="5041721228069770">
-    <div>شماره کارت</div>
+
+  <div class="qr">
+    <img src="https://ipasscopy.github.io/images/qrcode_filetransfer.png" alt="QR Code" />
   </div>
 </div>
 <script>

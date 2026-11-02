@@ -42,11 +42,11 @@
       right: 0;
       display: flex;
       justify-content: center;
-      padding: 48px 0 20px;
+      padding: 48px 0 144px; /* top gap 48px, bottom gap = 3x */
     }
     .qr {
-      width: 200px;
-      height: 200px;
+      width: min(300px, calc(100vw - 48px));
+      aspect-ratio: 1 / 1;
       padding: 10px;
       background: #fff;
       border-radius: 16px;

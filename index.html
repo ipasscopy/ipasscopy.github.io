@@ -14,43 +14,43 @@
     body {
       min-height: 100vh;
       background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      background-color: #24243e;
+      background-attachment: fixed; /* gradient stays single, even when page scrolls */
+      background-repeat: no-repeat;
       font-family: 'Vazir', system-ui, -apple-system, sans-serif;
       direction: rtl;
       color: #f0f0f0;
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 20px 12px;
+      padding: 40px 12px 20px; /* keeps the first button away from the top edge */
       overscroll-behavior: none;
     }
-    .layout {
-      width: 100%;
-      max-width: 900px;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-      gap: 28px;
-    }
     .container {
-      flex: 0 1 320px;
       width: 100%;
-      max-width: 320px;
+      max-width: 620px;
       display: flex;
       flex-direction: column;
       gap: 16px;
+      position: relative; /* QR is placed below without moving the buttons */
+    }
+    /* Single QR, below the card-number button, with a larger gap */
+    .qr-wrap {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      padding: 48px 0 20px;
     }
     .qr {
-      flex: 0 0 auto;
       width: 200px;
       height: 200px;
       padding: 10px;
       background: #fff;
       border-radius: 16px;
       box-shadow: 0 6px 20px rgba(0,0,0,0.35);
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
     .qr img {
       width: 100%;
@@ -108,28 +108,13 @@
     .btn-phone { background: linear-gradient(45deg, #06b6d4, #22d3ee); }
     .btn-card  { background: #01a35d; }
 
-    /* موبایل و صفحه‌های باریک: فقط یک کیوآر، بعد از شماره کارت */
-    @media (max-width: 800px) {
-      .layout {
-        flex-direction: column;
-        gap: 16px;
-      }
-      .container { max-width: 620px; flex: 0 0 auto; }
-      .qr { width: 180px; height: 180px; }
-      .qr:first-child { display: none; }
-    }
     @media (max-width: 620px) {
       .btn { max-width: 100%; }
     }
   </style>
 </head>
 <body>
-<div class="layout">
-  <div class="qr">
-    <img src="https://ipasscopy.github.io/images/qrcode_filetransfer.png" alt="QR Code" />
-  </div>
-
-  <div class="container">
+<div class="container">
     <div class="btn btn-ir1" data-text="IR@n09150915">
       <div>IR@n09150915</div>
     </div>
@@ -151,10 +136,10 @@
     <div class="btn btn-card" data-text="5041721228069770">
       <div>شماره کارت</div>
     </div>
-  </div>
-
-  <div class="qr">
-    <img src="https://ipasscopy.github.io/images/qrcode_filetransfer.png" alt="QR Code" />
+  <div class="qr-wrap">
+    <div class="qr">
+      <img src="https://ipasscopy.github.io/images/qrcode_filetransfer.png" alt="QR Code" />
+    </div>
   </div>
 </div>
 <script>

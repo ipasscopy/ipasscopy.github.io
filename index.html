@@ -34,7 +34,7 @@
       gap: 16px;
       position: relative; /* QR is placed below without moving the buttons */
     }
-    /* Single QR, below the card-number button, with a larger gap */
+    /* Single QR, below the last button, with a larger gap */
     .qr-wrap {
       position: absolute;
       top: 100%;
@@ -107,6 +107,7 @@
     .btn-addr  { background: linear-gradient(45deg, #f472b6, #db2777); }
     .btn-phone { background: linear-gradient(45deg, #06b6d4, #22d3ee); }
     .btn-card  { background: #01a35d; }
+    .btn-tg    { background: linear-gradient(45deg, #2AABEE, #229ED9); }
 
     @media (max-width: 620px) {
       .btn { max-width: 100%; }
@@ -135,6 +136,9 @@
     </div>
     <div class="btn btn-card" data-text="5041721228069770">
       <div>شماره کارت</div>
+    </div>
+    <div class="btn btn-tg" data-go="aHR0cHM6Ly9pcGFzc2NvcHkuZ2l0aHViLmlvL3RlbGVncmFtLmh0bWw=">
+      <div>پروکسی تلگرام</div>
     </div>
   <div class="qr-wrap">
     <div class="qr">
@@ -165,6 +169,15 @@
         }
         this.classList.add('copied');
         setTimeout(() => this.classList.remove('copied'), 1500);
+      });
+    });
+
+    // Telegram proxy button: address is stored as Base64 and decoded on click
+    document.querySelectorAll('.btn[data-go]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        try {
+          window.location.href = atob(btn.getAttribute('data-go'));
+        } catch (e) {}
       });
     });
   });

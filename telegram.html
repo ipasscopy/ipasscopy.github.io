@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>سایت‌های پروکسی</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap">
+<style>
+  :root {
+    --bg1: #e6fbf5; --bg2: #c7ecff; --bg3: #e3dcff;
+    --text: #12263a;
+    --shadow: rgba(18,38,58,0.25);
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg1: #021c1a; --bg2: #064e4a; --bg3: #0a2a52;
+      --text: #f0f7f7;
+      --shadow: rgba(0,0,0,0.45);
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg1: #021c1a; --bg2: #064e4a; --bg3: #0a2a52;
+    --text: #f0f7f7;
+    --shadow: rgba(0,0,0,0.45);
+    color-scheme: dark;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { height: 100%; scroll-padding-top: env(safe-area-inset-top, 0px); }
+  body {
+    min-height: 100%;
+    background-color: var(--bg2);
+    background-image: linear-gradient(160deg, var(--bg1), var(--bg2) 55%, var(--bg3));
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    font-family: 'Vazirmatn', 'Vazir', Tahoma, system-ui, -apple-system, sans-serif;
+    color: var(--text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 12px 28px;
+    overscroll-behavior: none;
+  }
+  .container {
+    width: 100%;
+    max-width: 620px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 18px 24px;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px var(--shadow);
+    max-width: 320px;
+    width: 100%;
+    margin: 0 auto;
+    line-height: 1.35;
+    user-select: none;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .btn:active { transform: scale(0.98); box-shadow: 0 2px 10px var(--shadow); }
+  .b1 { background: linear-gradient(45deg, #8b5cf6, #c084fc); }
+  .b2 { background: linear-gradient(45deg, #2563eb, #60a5fa); }
+  .b3 { background: linear-gradient(45deg, #059669, #34d399); }
+  .b4 { background: linear-gradient(45deg, #db2777, #f472b6); }
+  .b5 { background: linear-gradient(45deg, #0891b2, #22d3ee); }
+  @media (max-width: 620px) { .btn { max-width: 100%; } }
+</style>
+</head>
+<body>
+<div class="container">
+  <a class="btn b1" href="https://argh94.github.io/telegram-proxy-scraper/Files/index.html" target="_blank" rel="noopener noreferrer">پروکسی تلگرام ۱</a>
+  <a class="btn b2" href="https://prxbaz.com" target="_blank" rel="noopener noreferrer">پروکسی تلگرام ۲</a>
+  <a class="btn b3" href="https://0xradikal.github.io/Free-Telegram-Proxy/fa/#explorer" target="_blank" rel="noopener noreferrer">پروکسی تلگرام ۳</a>
+  <a class="btn b4" href="https://freedom-guard.github.io/Proxy/" target="_blank" rel="noopener noreferrer">پروکسی تلگرام ۴</a>
+  <a class="btn b5" href="https://vanced.to/telegram" target="_blank" rel="noopener noreferrer">پروکسی تلگرام ۵</a>
+</div>
+</body>
+</html>
